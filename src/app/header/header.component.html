@@ -1,38 +1,36 @@
 <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-blue scrolling-navbar" [containerInside]="true">
   <logo>
-    <a class="logo navbar-brand" href="#"><strong>Navbar</strong></a>
+    <a class="logo navbar-brand" href="#" routerLink="/home"><strong>TYHD</strong></a>
   </logo>
   <links>
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active waves-light" mdbRippleRadius>
-        <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item  waves-light" routerLinkActive="active" mdbRippleRadius>
+        <a class="nav-link" routerLink="/home">Home</a>
       </li>
-      <li class="nav-item waves-light" mdbRippleRadius>
-        <a class="nav-link">Features</a>
+      <li class="nav-item waves-light" routerLinkActive="active"mdbRippleRadius>
+        <a class="nav-link" routerLink="/movies">Movies</a>
       </li>
-      <li class="nav-item waves-light" mdbRippleRadius>
-        <a class="nav-link">Pricing</a>
+      <li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>
+        <a class="nav-link" routerLink="tv">TV Shows</a>
       </li>
-      <li class="nav-item waves-light" mdbRippleRadius>
-        <a class="nav-link">Opinions</a>
+      <li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>
+        <a class="nav-link" routerLink="games">Games</a>
       </li>
     </ul>
     <ul class="navbar-nav nav-flex-icons">
+      <li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>
+        <a class="nav-link" routerLink="wish-list">Wish List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Log In With</a>
+      </li>
       <li class="nav-item waves-light" mdbRippleRadius>
         <a class="nav-link"><i class="fa fa-facebook"></i></a>
       </li>
       <li class="nav-item waves-light" mdbRippleRadius>
-        <a class="nav-link"><i class="fa fa-twitter"></i></a>
-      </li>
-      <li class="nav-item waves-light" mdbRippleRadius>
-        <a class="nav-link"><i class="fa fa-instagram"></i></a>
+        <a class="nav-link"><i class="fa fa-google"></i></a>
       </li>
     </ul>
   </links>
 </mdb-navbar>
 <!-- Main -->
-<main>
-  <div class="container" style="height:1300px;">
-
-  </div>
-</main>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {Movie} from './movie.model';
 
 @Component({
   selector: 'app-movies',
@@ -7,7 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
-
+  selectedMovie: Movie;
   constructor() { }
   ngOnInit() {
   }

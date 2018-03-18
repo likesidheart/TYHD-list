@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-primary">New Movie</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-movie-item
+      *ngFor="let movieEl of movies"
+      [movie]="movieEl"
+      (movieSelected)="onMovieSelected(movieEl)"></app-movie-item>
+  </div>
+</div>
+
+

@@ -12,6 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { TvComponent } from './tv/tv.component';
 import { GamesComponent } from './games/games.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { MovieListComponent } from './movies/movie-list/movie-list.component';
+import { MovieItemComponent } from './movies/movie-list/movie-item/movie-item.component';
+import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     TvComponent,
     GamesComponent,
     WishlistComponent,
+    MovieListComponent,
+    MovieItemComponent,
+    MovieDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<a  (click)="onSelectMovieCard()">
+  <div class="card" >
+    <div class="card-body">
+      <h4 class="card-title" style="text-align: center">{{ movie.name}}</h4>
+      <img
+        class="img-thumbnail img-responsive" style="max-height: 150px;"
+        src="{{ movie.imagePath }}"
+        alt="{{ movie.name }}">
+      <!--<p class="card-text">{{ movie.description}}</p>-->
+      <!--<p class="card-text">Year: {{ movie.year}}</p>-->
+    </div>
+  </div>
+</a>

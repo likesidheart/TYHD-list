@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="col-xs-4">
+  <div class="col-xs-12">
     <a  (click)="onSelectMovieCard()">
       <div class="card" >
         <div class="card-body">
-          <h4 class="card-title" style="text-align: center">{{ movie.name}}</h4>
+          <h6 class="card-title truncate" style="text-align: center">{{ movie.name}}</h6>
           <img
             class="img-thumbnail img-responsive" style="max-height: 150px;"
             src="{{ movie.imagePath }}"

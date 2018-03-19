@@ -1,86 +1,38 @@
-<!--<div class="row">-->
-  <!--<div class="col-xs-12">-->
-    <!--<div class="btn-group">-->
-      <!--<button-->
-        <!--type="button"-->
-        <!--class="btn btn-primary dropdown-toggle">-->
-        <!--Manage Movie <span class="caret"></span>-->
-      <!--</button>-->
-      <!--<ul class="dropdown-menu">-->
-        <!--<li href="">Add To Wishlist</li>-->
-        <!--<li href="">Edit Movie</li>-->
-        <!--<li href="">Delete Movie</li>-->
-      <!--</ul>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-<!--<hr>-->
-<!--<div class="card">-->
-  <!--<div class="card-body">-->
-    <!--<div class="container-fluid">-->
-      <!--<div class="row">-->
-        <!--<div class="col-md-8">-->
-          <!--<h2>{{ movie.name }}</h2>-->
-        <!--</div>-->
-        <!--<div class="col-md-4">-->
-          <!--<h2>{{ movie.year}}</h2>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="row">-->
-        <!--<col-xs-12>-->
-          <!--<img [src]="movie.imagePath" alt="" class="img-responsive" style="max-height: 300px;">-->
-        <!--</col-xs-12>-->
-      <!--</div>-->
-      <!--<hr>-->
-      <!--<div class="row">-->
-        <!--<div class="col-xs-12">-->
-          <!--<h5>{{ movie.description }}</h5>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-<!--Card group-->
-<div class="card-deck">
+<div class="card">
+  <div class="card-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>{{ movie.name }}</h2>
+        </div>
+        <div class="col-md-4">
+          <h2>{{ movie.year}}</h2>
+        </div>
+      </div>
 
-  <!--Card-->
-  <div class="card mb-12">
-
-    <!--Card image-->
-    <div class="view overlay">
-      <img class="img-fluid" [src]= "movie.imagePath" alt="Card image cap">
-      <a href="#!">
-        <div class="mask rgba-white-slight"></div>
-      </a>
+        <div class="container">
+          <div class="row">
+            <div class="" col-md-6>
+                <img [src]="movie.imagePath" alt="" class="img-responsive" style="max-height: 300px;">
+            </div>
+            <div class="col-md-6">
+               <div class="btn-group-vertical pull-right" role="group" aria-label="Vertical button group">
+                 <br>
+                 <button type="button" class="btn btn-success"><i class="fa fa-heart"></i> Add to Wishlist</button>
+                 <br><br>
+                 <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit Movie </button>
+                 <br><br>
+                 <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Delete Movie </button>
+               </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12">
+          <h5>{{ movie.description }}</h5>
+        </div>
+      </div>
     </div>
-    <!--Card image-->
-
-    <!--Card content-->
-    <div class="card-body">
-
-      <!--Title-->
-      <h4 class="card-title">{{ movie.name }}</h4>
-      <h6 class="card-body">{{ movie.year }}</h6>
-
-      <!--Text-->
-      <p class="card-text">{{ movie.description }}</p>
-
-      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-      <button
-        type="button"
-        class="btn btn-primary dropdown-toggle">
-        Manage Movie <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li href="">Add To Wishlist</li>
-        <li href="">Edit Movie</li>
-        <li href="">Delete Movie</li>
-      </ul>
-    </div>
-    <!--Card content-->
-
   </div>
-  <!--Card-->
 </div>
-<!--Card group-->
-<div class="btn-group">

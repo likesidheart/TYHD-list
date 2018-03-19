@@ -8,14 +8,13 @@ import {Movie} from '../movie.model';
 })
 export class MovieListComponent implements OnInit {
  @Output() movieWasSelected = new EventEmitter<Movie>();
-  movies: Movie = [
-    new Movie(
-      'Rush',
-      'For the Formula 1 lovers',
+  movies: Movie[] = [
+    new Movie('Rush', 'For the Formula 1 lovers',
       'https://cdn.traileraddict.com/content/universal-pictures/rush2013-4.jpg',
       2013)
-];
-  constructor() { }
+  ] ;
+
+    constructor() { }
 
   ngOnInit() {
   }

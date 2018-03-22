@@ -6,11 +6,16 @@ import {HomeComponent} from './home/home.component';
 import {TvComponent} from './tv/tv.component';
 import {GamesComponent} from './games/games.component';
 import {WishlistComponent} from './wishlist/wishlist.component';
+import {MovieEditComponent} from './movies/movie-edit/movie-edit.component';
+import {MovieDetailComponent} from './movies/movie-detail/movie-detail.component';
 
 const appRoutes: Routes = [
   { path: ' ' , redirectTo: '/home', pathMatch: 'full' },
   {path: 'home', component: HomeComponent},
-  { path: 'movies' , component: MoviesComponent },
+  { path: 'movies' , component: MoviesComponent , children: [
+      {path: ':id', component: MovieDetailComponent },
+      {path: ':id/edit ', component: MovieEditComponent }
+    ]},
   { path: 'tv' , component: TvComponent },
   { path: 'games' , component: GamesComponent },
   { path: 'wish-list' , component: WishlistComponent }

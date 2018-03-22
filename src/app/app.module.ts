@@ -15,6 +15,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { MovieListComponent } from './movies/movie-list/movie-list.component';
 import { MovieItemComponent } from './movies/movie-list/movie-item/movie-item.component';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
+import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { MovieDetailComponent } from './movies/movie-detail/movie-detail.compone
     MovieListComponent,
     MovieItemComponent,
     MovieDetailComponent,
+    MovieEditComponent,
   ],
   imports: [
     BrowserModule,

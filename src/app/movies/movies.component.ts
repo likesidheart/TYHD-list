@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import {Router} from '@angular/router';
-import {Movie} from './movie.model';
+// import {Movie} from './movie.model';
 import {MovieService} from './movie.service';
 
 @Component({
@@ -10,15 +10,9 @@ import {MovieService} from './movie.service';
   providers: [MovieService]
 })
 export class MoviesComponent implements OnInit {
-  selectedMovie: Movie;
-  constructor(private movieService: MovieService) { }
+
+  constructor() { }
   ngOnInit() {
-      this.movieService.movieSelected
-        .subscribe(
-          (movie: Movie) => {
-            this.selectedMovie = movie;
-          }
-        );
   }
 
 }

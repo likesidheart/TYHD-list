@@ -19,6 +19,9 @@ export class MovieService {
   getMovies() {
    return this.movies.slice();
  }
+ getMovie(index: number) {
+    return this.movies[index];
+ }
 
   constructor() { }
 

@@ -16,6 +16,7 @@ import { MovieListComponent } from './movies/movie-list/movie-list.component';
 import { MovieItemComponent } from './movies/movie-list/movie-item/movie-item.component';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
 import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
+import { MovieStartComponent } from './movies/movie-start/movie-start.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
     MovieItemComponent,
     MovieDetailComponent,
     MovieEditComponent,
+    MovieStartComponent,
   ],
   imports: [
     BrowserModule,

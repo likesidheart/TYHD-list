@@ -1,13 +1,14 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-primary">Add New Movie</button>
+    <button class="btn btn-primary" (click)="onNewMovie()">Add New Movie</button>
   </div>
 </div>
 <hr>
 <div class="row">
     <app-movie-item
-      *ngFor="let movieEl of movies"
-      [movie]="movieEl"></app-movie-item>
+      *ngFor="let movieEl of movies; let i = index;"
+      [movie]="movieEl"
+      [index]="i"></app-movie-item>
 </div>
 
 

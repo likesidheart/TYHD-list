@@ -15,9 +15,9 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'movies' , component: MoviesComponent , children: [
       {path: '', component: MovieStartComponent },
-      {path: 'new ', component: MovieEditComponent},
+      {path: 'new', component: MovieEditComponent },
       {path: ':id', component: MovieDetailComponent },
-      {path: ':id/edit', component: MovieEditComponent }
+      {path: ':id/edit', component: MovieEditComponent },
     ]},
   { path: 'tv' , component: TvComponent },
   { path: 'games' , component: GamesComponent },

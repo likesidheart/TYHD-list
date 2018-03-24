@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {Movie} from '../movie.model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {MovieService} from '../movie.service';
+// import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-movie-detail',
@@ -29,4 +30,5 @@ export class MovieDetailComponent implements OnInit {
         }
       );
   }
+
 }

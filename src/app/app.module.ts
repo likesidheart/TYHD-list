@@ -17,6 +17,7 @@ import { MovieItemComponent } from './movies/movie-list/movie-item/movie-item.co
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
 import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
 import { MovieStartComponent } from './movies/movie-start/movie-start.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -38,7 +39,9 @@ import { MovieStartComponent } from './movies/movie-start/movie-start.component'
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],

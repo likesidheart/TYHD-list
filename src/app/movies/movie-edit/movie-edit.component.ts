@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {MovieService} from '../movie.service';
-import {Movie} from '../movie.model';
+// import {Movie} from '../movie.model';
 
 
 @Component({
@@ -16,7 +16,8 @@ export class MovieEditComponent implements OnInit {
   movieform: FormGroup;
 
   constructor(private route: ActivatedRoute,
-              private movieService: MovieService) { }
+              private movieService: MovieService,
+              private router: Router) { }
 
    // retrive the id
   ngOnInit() {
@@ -41,6 +42,7 @@ export class MovieEditComponent implements OnInit {
       } else {
         this.movieService.addMovie( this.movieform.value);
       }
+      this.onCancel();
   }
   private initForm() {
     let movieName = '';
@@ -61,6 +63,9 @@ export class MovieEditComponent implements OnInit {
       'description': new FormControl(movieDescription, Validators.required),
       'year': new FormControl(movieYear, Validators.required)
     });
+  }
+  onCancel() {
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 }
 

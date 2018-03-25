@@ -19,9 +19,9 @@
 
       <!-- Default input img -->
       <label for="imagePath" class="grey-text">Image URL</label>
-      <input type="text" id="imagePath" class="form-control" formControlName="imagePath">
+      <input type="text" id="imagePath" class="form-control" formControlName="imagePath" #imagePath>
 
-      <img src="" class="img-responsive rounded mx-auto d-block" style="max-height: 250px; float: contour">
+      <img [src]="imagePath.value" class="img-responsive rounded mx-auto d-block" style="max-height: 250px;" >
 
       <br>
 
@@ -31,7 +31,7 @@
 
       <div class="text-center mt-4">
         <button class="btn btn-outline-success" [disabled]="!movieform.valid" type="submit">Save<i class="fa fa-save ml-2"></i></button>
-        <button class="btn btn-outline-danger" type="button">Cancel<i class="fa fa-ban ml-2"></i></button>
+        <button class="btn btn-outline-danger" type="button" (click)="onCancel()">Cancel<i class="fa fa-ban ml-2"></i></button>
       </div>
     </form>
     <!-- Default form contact -->

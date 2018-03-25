@@ -30,5 +30,9 @@ export class MovieDetailComponent implements OnInit {
         }
       );
   }
+  onDeleteMovie() {
+    this.movieService.deleteMovie(this.id);
+    this.router.navigate(['/movies']);
+  }
 
 }

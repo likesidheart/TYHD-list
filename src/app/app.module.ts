@@ -18,6 +18,11 @@ import { MovieDetailComponent } from './movies/movie-detail/movie-detail.compone
 import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
 import { MovieStartComponent } from './movies/movie-start/movie-start.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { TvStartComponent } from './tv/tv-start/tv-start.component';
+import { TvListComponent } from './tv/tv-list/tv-list.component';
+import { TvItemComponent } from './tv/tv-list/tv-item/tv-item.component';
+import { TvEditComponent } from './tv/tv-edit/tv-edit.component';
+import { TvDetailComponent } from './tv/tv-detail/tv-detail.component';
 
 
 @NgModule({
@@ -35,6 +40,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MovieDetailComponent,
     MovieEditComponent,
     MovieStartComponent,
+    TvStartComponent,
+    TvListComponent,
+    TvItemComponent,
+    TvEditComponent,
+    TvDetailComponent,
   ],
   imports: [
     BrowserModule,

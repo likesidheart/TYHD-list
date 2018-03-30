@@ -1,4 +1,4 @@
-export class Movie {
+export class TV {
   public name: string;
   public description: string;
   public imagePath: string;

@@ -2,23 +2,23 @@
 <!-- Card -->
 <div class="card mx-xl-12">
   <div class="card-body">
-    <form [formGroup]="movieform" (ngSubmit)="onSubmit()">
-      <p class="h3 text-center mb-3">Edit Movie</p>
+    <form [formGroup]="tvform" (ngSubmit)="onSubmit()">
+      <p class="h3 text-center mb-3">Edit TV Show</p>
 
       <!-- Default input name -->
-      <label for="name" class="grey-text">Movie Name</label>
+      <label for="name" class="grey-text">TV show Name</label>
       <input type="text" id="name" class="form-control" formControlName="name">
 
       <br>
       <div class="row">
         <div class="col-md-6">
           <!-- Default input name -->
-          <label for="rating" class="grey-text">Movie Rating</label>
+          <label for="rating" class="grey-text">TV show Rating</label>
           <input type="text" id="rating" class="form-control" formControlName="rating">
         </div>
         <div class="col-md-6">
           <!-- Default input year -->
-          <label for="year" class="grey-text pull right">Movie Year</label>
+          <label for="year" class="grey-text pull right">TV show Year</label>
           <input type="text" id="year" class="form-control" formControlName="year">
         </div>
       </div>
@@ -39,7 +39,7 @@
       <textarea type="text" id="desc" class="form-control" formControlName="description" rows="3"></textarea>
 
       <div class="text-center mt-4">
-        <button class="btn btn-outline-success" [disabled]="!movieform.valid" type="submit">Save<i class="fa fa-save ml-2"></i></button>
+        <button class="btn btn-outline-success" [disabled]="!tvform.valid" type="submit">Save<i class="fa fa-save ml-2"></i></button>
         <button class="btn btn-outline-danger" type="button" (click)="onCancel()">Cancel<i class="fa fa-ban ml-2"></i></button>
       </div>
     </form>

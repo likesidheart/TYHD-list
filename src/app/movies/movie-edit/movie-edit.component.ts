@@ -49,6 +49,7 @@ export class MovieEditComponent implements OnInit {
     let movieImagePath = '';
     let movieDescription = '';
     let movieYear = '';
+    let movierating = '';
 
     if (this.editMode) {
       const movie = this.movieService.getMovie(this.id);
@@ -56,12 +57,14 @@ export class MovieEditComponent implements OnInit {
       movieImagePath = movie.imagePath;
       movieDescription = movie.description;
       movieYear = movie.year;
+      movierating = movie.rating;
     }
     this.movieform = new FormGroup({
       'name': new FormControl(movieName, Validators.required),
       'imagePath': new FormControl(movieImagePath, Validators.required),
       'description': new FormControl(movieDescription, Validators.required),
-      'year': new FormControl(movieYear, Validators.required)
+      'year': new FormControl(movieYear, Validators.required),
+      'rating' : new FormControl(movierating, Validators.required)
     });
   }
   onCancel() {

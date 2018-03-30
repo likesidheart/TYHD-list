@@ -9,6 +9,9 @@ import {WishlistComponent} from './wishlist/wishlist.component';
 import {MovieEditComponent} from './movies/movie-edit/movie-edit.component';
 import {MovieDetailComponent} from './movies/movie-detail/movie-detail.component';
 import {MovieStartComponent} from './movies/movie-start/movie-start.component';
+import {TvStartComponent} from './tv/tv-start/tv-start.component';
+import {TvEditComponent} from './tv/tv-edit/tv-edit.component';
+import {TvDetailComponent} from './tv/tv-detail/tv-detail.component';
 
 const appRoutes: Routes = [
   { path: ' ' , redirectTo: '/home', pathMatch: 'full' },
@@ -19,7 +22,12 @@ const appRoutes: Routes = [
       {path: ':id', component: MovieDetailComponent },
       {path: ':id/edit', component: MovieEditComponent },
     ]},
-  { path: 'tv' , component: TvComponent },
+  { path: 'tv' , component: TvComponent, children: [
+      {path: '', component: TvStartComponent },
+      {path: 'new', component: TvEditComponent },
+      {path: ':id', component: TvDetailComponent },
+      {path: ':id/edit', component: TvEditComponent },
+    ] },
   { path: 'games' , component: GamesComponent },
   { path: 'wish-list' , component: WishlistComponent }
 ];

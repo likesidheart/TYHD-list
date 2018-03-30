@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>{{ tv.name }} <h7>({{tv.rating}})</h7></h2>
+        </div>
+        <div class="col-md-4">
+          <h2>{{ tv.year}}</h2>
+        </div>
+      </div>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <div class="" col-md-6>
+            <img [src]="tv.imagePath" alt="" class="img-responsive" style="max-height: 300px;">
+          </div>
+          <div class="col-md-6">
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+              <button type="button" class="btn btn-success"><i class="fa fa-heart"></i> Add to Wishlist</button>
+              <br><br>
+              <button type="button" class="btn btn-primary" (click)="onEditTV()"><i class="fa fa-pencil"></i> Edit TV show </button>
+              <br><br>
+              <button type="button" class="btn btn-danger" (click)="onDeleteTV()"><i class="fa fa-trash"></i> Delete TV show </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12">
+          <h5>{{ tv.description }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

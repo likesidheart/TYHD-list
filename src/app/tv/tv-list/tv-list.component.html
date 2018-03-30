@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-primary" (click)="onNewTV()">Add New Season</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <app-tv-item
+    *ngFor="let tvEl of tvs; let i = index;"
+    [tv]="tvEl"
+    [index]="i"></app-tv-item>
+</div>
+
+

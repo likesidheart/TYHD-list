@@ -23,6 +23,11 @@ import { TvListComponent } from './tv/tv-list/tv-list.component';
 import { TvItemComponent } from './tv/tv-list/tv-item/tv-item.component';
 import { TvEditComponent } from './tv/tv-edit/tv-edit.component';
 import { TvDetailComponent } from './tv/tv-detail/tv-detail.component';
+import { GameStartComponent } from './games/game-start/game-start.component';
+import { GameListComponent } from './games/game-list/game-list.component';
+import { GameItemComponent } from './games/game-list/game-item/game-item.component';
+import { GameEditComponent } from './games/game-edit/game-edit.component';
+import { GameDetailComponent } from './games/game-detail/game-detail.component';
 
 
 @NgModule({
@@ -45,6 +50,11 @@ import { TvDetailComponent } from './tv/tv-detail/tv-detail.component';
     TvItemComponent,
     TvEditComponent,
     TvDetailComponent,
+    GameStartComponent,
+    GameListComponent,
+    GameItemComponent,
+    GameEditComponent,
+    GameDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,9 @@ import {MovieStartComponent} from './movies/movie-start/movie-start.component';
 import {TvStartComponent} from './tv/tv-start/tv-start.component';
 import {TvEditComponent} from './tv/tv-edit/tv-edit.component';
 import {TvDetailComponent} from './tv/tv-detail/tv-detail.component';
+import {GameStartComponent} from './games/game-start/game-start.component';
+import {GameEditComponent} from './games/game-edit/game-edit.component';
+import {GameDetailComponent} from './games/game-detail/game-detail.component';
 
 const appRoutes: Routes = [
   { path: ' ' , redirectTo: '/home', pathMatch: 'full' },
@@ -28,7 +31,12 @@ const appRoutes: Routes = [
       {path: ':id', component: TvDetailComponent },
       {path: ':id/edit', component: TvEditComponent },
     ] },
-  { path: 'games' , component: GamesComponent },
+  { path: 'games' , component: GamesComponent, children: [
+      {path: '', component: GameStartComponent },
+      {path: 'new', component: GameEditComponent },
+      {path: ':id', component: GameDetailComponent },
+      {path: ':id/edit', component: GameEditComponent },
+    ]},
   { path: 'wish-list' , component: WishlistComponent }
 ];
 @NgModule({

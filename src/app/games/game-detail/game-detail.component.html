@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>{{ game.name }} <h7>({{game.rating}})</h7></h2>
+        </div>
+        <div class="col-md-4">
+          <h2>{{ game.year}}</h2>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="" col-md-6>
+            <img [src]="game.imagePath" alt="" class="img-responsive" style="max-height: 300px;">
+          </div>
+          <div class="col-md-6">
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+              <button type="button" class="btn btn-success"><i class="fa fa-heart"></i> Add to Wishlist</button>
+              <br><br>
+              <button type="button" class="btn btn-primary" (click)="onEditGame()"><i class="fa fa-pencil"></i> Edit Game </button>
+              <br><br>
+              <button type="button" class="btn btn-danger" (click)="onDeleteGame()"><i class="fa fa-trash"></i> Delete Game </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12">
+          <h5>{{ game.description }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

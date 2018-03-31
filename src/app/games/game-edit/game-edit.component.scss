@@ -1,0 +1,9 @@
+.card {
+  margin-top: 10px;
+}
+input.ng-invalid.ng-touched {
+  border-bottom: 2px solid red;
+}
+textarea.ng-invalid.ng-touched {
+  border: 2px solid red;
+}

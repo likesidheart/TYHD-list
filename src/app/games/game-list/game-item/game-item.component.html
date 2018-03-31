@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="col-xs-12">
+    <a  style="cursor: pointer;"
+        [routerLink]="[index]"
+        routerLinkActive="Active">
+      <div class="card" >
+        <div class="card-body">
+          <h6 class="card-title truncate" style="text-align: center">{{ game.name}}</h6>
+          <img
+            class="img-thumbnail img-responsive" style="max-height: 150px;"
+            src="{{ game.imagePath }}"
+            alt="{{ game.name }}">
+          <!--<p class="card-text">{{ movie.description}}</p>-->
+          <!--<p class="card-text">Year: {{ movie.year}}</p>-->
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>

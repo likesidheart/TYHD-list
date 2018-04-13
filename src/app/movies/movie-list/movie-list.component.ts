@@ -11,7 +11,8 @@ import {promise} from 'selenium-webdriver';
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
-  movies: Movie[];
+  // movies: Movie[];
+  movies: any;
 
   constructor(private movieService: MovieService,
               private router: Router,
@@ -19,14 +20,23 @@ export class MovieListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.movieService.moviesChanged
-      .subscribe(
-        (movies: Movie[]) => {
-          this.movies = movies;
-        }
-      );
-    this.movies = this.movieService.getMovies();
+    // this.movieService.moviesChanged
+    //   .subscribe(
+    //     (movies: Movie[]) => {
+    //       this.movies = movies;
+    //     }
+    //   );
+    // this.movies = this.movieService.getMovies();
+    this.getMovies();
   }
+
+  getMovies() {
+    this.movieService.getTopMovies()
+      .subscribe(movies => {
+        console.log(movies)
+        this.movies = movies.results;
+      }
+  });
 
   onNewMovie() {
     this.router.navigate(['new'], {relativeTo: this.route});

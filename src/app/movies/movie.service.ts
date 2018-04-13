@@ -1,11 +1,13 @@
 import { Injectable} from '@angular/core';
 import {Movie} from './movie.model';
 import {Subject} from 'rxjs/Subject';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class MovieService {
   moviesChanged = new Subject<Movie[]>();
-
+  constructor(  private http: HttpClient) {
+  }
  private movies: Movie[] = [
     new Movie('Rush', 'For the Formula 1 lovers',
       'https://cdn.traileraddict.com/content/universal-pictures/rush2013-4.jpg',
@@ -35,7 +37,9 @@ export class MovieService {
         this.movies.splice(index, 1);
         this.moviesChanged.next(this.movies.slice());
  }
+  getTopMovies() {
+     return this.http.get('https://api.themoviedb.org/3/movie/top_rated?api_key=975d49ab8b9a7c4dd27643739483adc7')
 
-  constructor() { }
+  }
 
 }

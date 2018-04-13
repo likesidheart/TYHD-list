@@ -28,7 +28,7 @@ import { GameListComponent } from './games/game-list/game-list.component';
 import { GameItemComponent } from './games/game-list/game-item/game-item.component';
 import { GameEditComponent } from './games/game-edit/game-edit.component';
 import { GameDetailComponent } from './games/game-detail/game-detail.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -61,7 +61,8 @@ import { GameDetailComponent } from './games/game-detail/game-detail.component';
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],

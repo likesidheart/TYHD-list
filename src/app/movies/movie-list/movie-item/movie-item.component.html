@@ -5,10 +5,10 @@
         routerLinkActive="Active">
       <div class="card" >
         <div class="card-body">
-          <h6 class="card-title truncate" style="text-align: center">{{ movie.title}}</h6>
+          <h6 class="card-title truncate" style="text-align: center">{{ movie.name}}</h6>
           <img
             class="img-thumbnail img-responsive" style="max-height: 150px;"
-            src="https://image.tmdb.org/t/p/w780{{ movie.poster_path }}"
+            src="{{ movie.imagePath }}"
             alt="{{ movie.name }}">
           <!--<p class="card-text">{{ movie.description}}</p>-->
           <!--<p class="card-text">Year: {{ movie.year}}</p>-->

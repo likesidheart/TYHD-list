@@ -36,6 +36,11 @@ export class GameService {
     this.gamesChanged.next(this.games.slice());
   }
 
+  setGames(games: Game[]) {
+    this.games = games;
+    this.gamesChanged.next(this.games.slice());
+  }
+
   constructor() { }
 
 }

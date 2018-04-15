@@ -20,6 +20,10 @@ export class MovieDetailComponent implements OnInit {
     this.router.navigate(['edit'], {relativeTo: this.route});
     // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
+  // onWishlist() {
+  //   this.router.navigate(['wish-list']);
+  //   this.movieService.toWishlistMovie(this.id);
+  // }
   ngOnInit() {
     // const id = this.route.snapshot.params['id'];
     this.route.params

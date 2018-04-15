@@ -1,5 +1,6 @@
 import {Component, OnInit, Input } from '@angular/core';
 import {Movie} from '../../movie.model';
+// import {MovieService} from '../../movie.service';
 
 
 @Component({
@@ -9,17 +10,12 @@ import {Movie} from '../../movie.model';
 })
 export class MovieItemComponent implements OnInit {
   @Input() movie: Movie;
-  // @Input() index: number;
-  movies: any;
+  @Input() index: number;
 
-  constructor() {
-  }
-
+  constructor() { }
 
   ngOnInit() {
   }
-
-
 
   // onSelectMovieCard() {
   //   this.movieService.movieSelected.emit(this.movie);

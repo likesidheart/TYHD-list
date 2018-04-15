@@ -28,7 +28,12 @@ import { GameListComponent } from './games/game-list/game-list.component';
 import { GameItemComponent } from './games/game-list/game-item/game-item.component';
 import { GameEditComponent } from './games/game-edit/game-edit.component';
 import { GameDetailComponent } from './games/game-detail/game-detail.component';
-import { HttpClientModule } from '@angular/common/http';
+import {MovieService} from './movies/movie.service';
+import {DataStorageService} from '../shared/data-storage.service';
+import {HttpModule} from '@angular/http';
+import {TvService} from './tv/tv.service';
+import {GameService} from './games/game.service';
+
 
 @NgModule({
   declarations: [
@@ -62,10 +67,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [MovieService, DataStorageService, TvService, GameService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

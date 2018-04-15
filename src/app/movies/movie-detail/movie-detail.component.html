@@ -3,13 +3,13 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8">
-          <h2>{{ movie.title }} <h7>({{movie.rating}})</h7></h2>
+          <h2>{{ movie.name }} <h7>({{movie.rating}})</h7></h2>
         </div>
         <div class="col-md-4">
           <h2>{{ movie.year}}</h2>
         </div>
       </div>
-<hr>
+
         <div class="container">
           <div class="row">
             <div class="" col-md-6>
@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-6">
                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-                 <button type="button" class="btn btn-success"><i class="fa fa-heart"></i> Add to Wishlist</button>
+                 <button type="button" class="btn btn-success" (click)="onWishlist()"><i class="fa fa-heart"></i> Add to Wishlist</button>
                  <br><br>
                  <button type="button" class="btn btn-primary" (click)="onEditMovie()"><i class="fa fa-pencil"></i> Edit Movie </button>
                  <br><br>

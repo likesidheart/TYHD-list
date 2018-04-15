@@ -35,7 +35,11 @@ export class TvService {
     this.tvs.splice(index, 1);
     this.tvsChanged.next(this.tvs.slice());
   }
+  setTvs(tvs: TV[]) {
+    this.tvs = tvs;
+    this.tvsChanged.next(this.tvs.slice());
+  }
+
 
   constructor() { }
-
 }

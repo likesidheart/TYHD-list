@@ -11,11 +11,11 @@ export class SignupComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
-  ngOnInit() {
+  onSubmit(f: NgForm) {
+    const enteredemail = f.value.email;
+    const enteredpassword = f.value.password;
+    this.authService.signupUser(enteredemail, enteredpassword);
   }
-  onSignup(form: NgForm) {
-    const email = form.value.email;
-    const password = form.value.password;
-    this.authService.signupUser(email, password);
+  ngOnInit() {
   }
 }

@@ -15,6 +15,8 @@ import {TvDetailComponent} from './tv/tv-detail/tv-detail.component';
 import {GameStartComponent} from './games/game-start/game-start.component';
 import {GameEditComponent} from './games/game-edit/game-edit.component';
 import {GameDetailComponent} from './games/game-detail/game-detail.component';
+import {SignupComponent} from './auth/signup/signup.component';
+import {SigninComponent} from './auth/signin/signin.component';
 
 const appRoutes: Routes = [
   { path: ' ' , redirectTo: '/home', pathMatch: 'full' },
@@ -37,7 +39,9 @@ const appRoutes: Routes = [
       {path: ':id', component: GameDetailComponent },
       {path: ':id/edit', component: GameEditComponent },
     ]},
-  { path: 'wish-list' , component: WishlistComponent }
+  { path: 'wish-list' , component: WishlistComponent },
+  { path: 'signin', component: SigninComponent},
+  { path: 'signup', component: SignupComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],

@@ -16,21 +16,21 @@
       <li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>
         <a class="nav-link" routerLink="games">Games</a>
       </li>
-      <li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>
-        <a class="nav-link" routerLink="wish-list">Favourites</a>
-      </li>
+      <!--<li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>-->
+        <!--<a class="nav-link" routerLink="wish-list">Favourites</a>-->
+      <!--</li>-->
     </ul>
     <ul class="navbar-nav nav-flex-icons">
 
       <li class="nav-item">
-        <button class="btn btn-primary" (click)="onSaveData()">Save Data</button>
-      </li>
-      <li class="nav-item">
-        <button class="btn btn-primary btn-1x" (click)="onFetchData()">Fetch Data</button>
+        <a class="nav-link" (click)="onSaveData()">Save Data</a>
       </li>
       <!--<li class="nav-item">-->
-        <!--<a class="nav-link">Log In With</a>-->
+        <!--<button class="btn btn-primary btn-1x" (click)="onFetchData()">Fetch Data</button>-->
       <!--</li>-->
+      <li class="nav-item">
+        <strong><a class="nav-link">Log In</a>  </strong>
+      </li>
       <!--<li class="nav-item waves-light" mdbRippleRadius>-->
         <!--<a class="nav-link"><i class="fa fa-facebook"></i></a>-->
       <!--</li>-->

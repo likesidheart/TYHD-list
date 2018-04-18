@@ -33,6 +33,8 @@ import {DataStorageService} from '../shared/data-storage.service';
 import {HttpModule} from '@angular/http';
 import {TvService} from './tv/tv.service';
 import {GameService} from './games/game.service';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 
 @NgModule({
@@ -60,6 +62,8 @@ import {GameService} from './games/game.service';
     GameItemComponent,
     GameEditComponent,
     GameDetailComponent,
+    SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,16 +6,20 @@ import {TvService} from '../app/tv/tv.service';
 import {TV} from '../app/tv/tv.model';
 import {GameService} from '../app/games/game.service';
 import {Game} from '../app/games/game.model';
+import {AuthService} from '../app/auth/auth.service';
 
 
 @Injectable()
 export class DataStorageService {
-  constructor(private http: Http, private movieService: MovieService, private tvService: TvService, private gameService: GameService) {}
+  constructor(private http: Http, private movieService: MovieService, private tvService: TvService, private gameService: GameService,
+              private authService: AuthService) {}
   storeMovies() {
-     return this.http.put('https://ng-tyhd.firebaseio.com/movies.json', this.movieService.getMovies());
+    const token = this.authService.getToken();
+     return this.http.put('https://ng-tyhd.firebaseio.com/movies.json?auth=' + token, this.movieService.getMovies());
   }
   getMovies() {
-    this.http.get('https://ng-tyhd.firebaseio.com/movies.json')
+    const token = this.authService.getToken();
+    this.http.get('https://ng-tyhd.firebaseio.com/movies.json?auth=' + token)
       .subscribe(
         (data) => {
           const movies: Movie[] = data.json();

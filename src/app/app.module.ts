@@ -36,6 +36,7 @@ import {GameService} from './games/game.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import {AuthService} from './auth/auth.service';
+import {AuthGurd} from './auth/auth-gurd.service';
 
 
 @NgModule({
@@ -75,7 +76,7 @@ import {AuthService} from './auth/auth.service';
     HttpModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [MovieService, DataStorageService, TvService, GameService, AuthService ],
+  providers: [MovieService, DataStorageService, TvService, GameService, AuthService, AuthGurd],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

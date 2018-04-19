@@ -17,31 +17,33 @@ import {GameEditComponent} from './games/game-edit/game-edit.component';
 import {GameDetailComponent} from './games/game-detail/game-detail.component';
 import {SignupComponent} from './auth/signup/signup.component';
 import {SigninComponent} from './auth/signin/signin.component';
+import {AuthGurd} from './auth/auth-gurd.service';
 
 const appRoutes: Routes = [
   { path: ' ' , redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
   { path: 'movies' , component: MoviesComponent , children: [
       {path: '', component: MovieStartComponent },
-      {path: 'new', component: MovieEditComponent },
+      {path: 'new', component: MovieEditComponent, canActivate: [AuthGurd]},
       {path: ':id', component: MovieDetailComponent },
-      {path: ':id/edit', component: MovieEditComponent },
+      {path: ':id/edit', component: MovieEditComponent, canActivate: [AuthGurd] },
     ]},
   { path: 'tv' , component: TvComponent, children: [
       {path: '', component: TvStartComponent },
-      {path: 'new', component: TvEditComponent },
+      {path: 'new', component: TvEditComponent, canActivate: [AuthGurd]},
       {path: ':id', component: TvDetailComponent },
-      {path: ':id/edit', component: TvEditComponent },
+      {path: ':id/edit', component: TvEditComponent, canActivate: [AuthGurd] },
     ] },
   { path: 'games' , component: GamesComponent, children: [
       {path: '', component: GameStartComponent },
-      {path: 'new', component: GameEditComponent },
+      {path: 'new', component: GameEditComponent, canActivate: [AuthGurd] },
       {path: ':id', component: GameDetailComponent },
-      {path: ':id/edit', component: GameEditComponent },
+      {path: ':id/edit', component: GameEditComponent, canActivate: [AuthGurd] },
     ]},
   { path: 'wish-list' , component: WishlistComponent },
-  { path: 'signin', component: SigninComponent},
-  { path: 'signup', component: SignupComponent}
+  { path: 'signup', component: SignupComponent},
+  { path: 'signin', component: SigninComponent
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],

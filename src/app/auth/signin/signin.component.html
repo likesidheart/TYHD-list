@@ -5,7 +5,7 @@
       <div class="card-body">
 
         <!-- Default form subscription -->
-        <form #f=ngForm (ngSubmit)="onSignin(f)" novalidate>
+        <form #f=ngForm (ngSubmit)="onSignin(f)">
           <p class="h4 text-center py-4">Log In</p>
 
           <!-- Default input name -->
@@ -23,6 +23,7 @@
           </div>
         </form>
         <!-- Default form subscription -->
+        <h3 style="text-align: center">If you are a new User then<button class="btn btn-outline-blue" (click)="onSignup()">Sign Up</button> </h3>
 
       </div>
       <!-- Card body -->

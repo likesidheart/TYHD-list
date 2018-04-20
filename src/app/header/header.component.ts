@@ -30,6 +30,12 @@ export class HeaderComponent {
           console.log(data);
         }
       );
+    this.dataStorageService.storefavouritesmovies()
+      .subscribe(
+        (data) => {
+          console.log(data);
+        }
+      );
   }
  onFetchData() {
     this.dataStorageService.getMovies();

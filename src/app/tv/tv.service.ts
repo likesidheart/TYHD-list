@@ -1,6 +1,8 @@
 import { Injectable} from '@angular/core';
 import { TV } from './tv.model';
 import {Subject} from 'rxjs/Subject';
+import {Movie} from '../movies/movie.model';
+import {WishlistService} from '../wishlist/wishlist.service';
 
 @Injectable()
 export class TvService {
@@ -39,7 +41,9 @@ export class TvService {
     this.tvs = tvs;
     this.tvsChanged.next(this.tvs.slice());
   }
+  addTVtoFavourites(tvs: TV) {
+    this.wishlistService.addTV(tvs);
+  }
 
-
-  constructor() { }
+  constructor(private wishlistService: WishlistService) { }
 }

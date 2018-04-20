@@ -7,19 +7,20 @@ import {TV} from '../app/tv/tv.model';
 import {GameService} from '../app/games/game.service';
 import {Game} from '../app/games/game.model';
 import {AuthService} from '../app/auth/auth.service';
+import {WishlistService} from '../app/wishlist/wishlist.service';
 
 
 @Injectable()
 export class DataStorageService {
   constructor(private http: Http, private movieService: MovieService, private tvService: TvService, private gameService: GameService,
-              private authService: AuthService) {}
+              private authService: AuthService, private wishlistService: WishlistService) {}
   storeMovies() {
-    const token = this.authService.getToken();
-     return this.http.put('https://ng-tyhd.firebaseio.com/movies.json?auth=' + token, this.movieService.getMovies());
+    // const token = this.authService.getToken();
+     return this.http.put('https://ng-tyhd.firebaseio.com/movies.json', this.movieService.getMovies());
   }
   getMovies() {
-    const token = this.authService.getToken();
-    this.http.get('https://ng-tyhd.firebaseio.com/movies.json?auth=' + token)
+    // const token = this.authService.getToken();
+    this.http.get('https://ng-tyhd.firebaseio.com/movies.json')
       .subscribe(
         (data) => {
           const movies: Movie[] = data.json();
@@ -51,5 +52,8 @@ export class DataStorageService {
           this.gameService.setGames(games);
         }
       );
+  }
+  storefavouritesmovies() {
+    return this.http.put('https://ng-tyhd.firebaseio.com/favourites.json', this.wishlistService.getMovie());
   }
 }

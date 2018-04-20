@@ -42,8 +42,7 @@ const appRoutes: Routes = [
     ]},
   { path: 'wish-list' , component: WishlistComponent, canActivate: [AuthGurd] },
   { path: 'signup', component: SignupComponent},
-  { path: 'signin', component: SigninComponent
-  }
+  { path: 'signin', component: SigninComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],

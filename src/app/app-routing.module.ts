@@ -40,7 +40,7 @@ const appRoutes: Routes = [
       {path: ':id', component: GameDetailComponent },
       {path: ':id/edit', component: GameEditComponent, canActivate: [AuthGurd] },
     ]},
-  { path: 'wish-list' , component: WishlistComponent },
+  { path: 'wish-list' , component: WishlistComponent, canActivate: [AuthGurd] },
   { path: 'signup', component: SignupComponent},
   { path: 'signin', component: SigninComponent
   }

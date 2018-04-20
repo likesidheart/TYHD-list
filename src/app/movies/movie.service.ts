@@ -1,6 +1,7 @@
 import { Injectable} from '@angular/core';
 import {Movie} from './movie.model';
 import {Subject} from 'rxjs/Subject';
+import {WishlistService} from '../wishlist/wishlist.service';
 
 @Injectable()
 export class MovieService {
@@ -39,7 +40,10 @@ export class MovieService {
     this.movies = movies;
     this.moviesChanged.next(this.movies.slice());
   }
+  addMovietoFavourites(movies: Movie) {
+    this.wishlistService.addMovie(movies);
+  }
 
 
-  constructor() { }
+  constructor(private wishlistService:  WishlistService) { }
 }

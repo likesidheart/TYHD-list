@@ -16,9 +16,9 @@
       <li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>
         <a class="nav-link" routerLink="games">Games</a>
       </li>
-      <!--<li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>-->
-        <!--<a class="nav-link" routerLink="wish-list">Favourites</a>-->
-      <!--</li>-->
+      <li class="nav-item waves-light" *ngIf="authService.isAuthenticated()" routerLinkActive="active" mdbRippleRadius>
+        <a class="nav-link" routerLink="wish-list">Favourites</a>
+      </li>
     </ul>
     <ul class="navbar-nav nav-flex-icons">
     <ng-template [ngIf]="!authService.isAuthenticated()">

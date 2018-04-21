@@ -1,8 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component,  OnInit} from '@angular/core';
 import {Movie} from '../movie.model';
 import {MovieService} from '../movie.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {promise} from 'selenium-webdriver';
 import {Subscription} from 'rxjs/Subscription';
 // import {MovieEditComponent} from '../movie-edit/movie-edit.component';
 
@@ -11,7 +10,7 @@ import {Subscription} from 'rxjs/Subscription';
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.scss']
 })
-export class MovieListComponent implements OnInit, OnDestroy {
+export class MovieListComponent implements OnInit {
   movies: Movie[];
   subscription: Subscription;
 
@@ -33,7 +32,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
   onNewMovie() {
     this.router.navigate(['new'], {relativeTo: this.route});
   }
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
+  // }
 }

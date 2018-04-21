@@ -18,6 +18,7 @@ export class MovieService {
       'http://t0.gstatic.com/images?q=tbn:ANd9GcQCfmvrE4fMo2cd8esc7mDZPtFSJThAujddMPkRtti1_ij6u-jp',
       '2009', '7.8')
   ] ;
+  constructor(private wishlistService:  WishlistService) { }
   getMovies() {
    return this.movies.slice();
  }
@@ -43,7 +44,4 @@ export class MovieService {
   addMovietoFavourites(movies: Movie) {
     this.wishlistService.addMovie(movies);
   }
-
-
-  constructor(private wishlistService:  WishlistService) { }
 }

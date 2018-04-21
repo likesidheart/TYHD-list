@@ -30,7 +30,6 @@ import { GameEditComponent } from './games/game-edit/game-edit.component';
 import { GameDetailComponent } from './games/game-detail/game-detail.component';
 import {MovieService} from './movies/movie.service';
 import {DataStorageService} from '../shared/data-storage.service';
-import {HttpModule} from '@angular/http';
 import {TvService} from './tv/tv.service';
 import {GameService} from './games/game.service';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -38,6 +37,7 @@ import { SigninComponent } from './auth/signin/signin.component';
 import {AuthService} from './auth/auth.service';
 import {AuthGurd} from './auth/auth-gurd.service';
 import {WishlistService} from './wishlist/wishlist.service';
+import { HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -74,7 +74,7 @@ import {WishlistService} from './wishlist/wishlist.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpClientModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [MovieService, DataStorageService, TvService, GameService, AuthService, AuthGurd, WishlistService],

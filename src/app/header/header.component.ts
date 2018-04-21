@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import {DataStorageService} from '../../shared/data-storage.service';
-import { Response} from '@angular/http';
 import {AuthService} from '../auth/auth.service';
+import { Response } from '@angular/http';
+
 
 @Component({
   selector: 'app-header',
@@ -11,37 +12,47 @@ import {AuthService} from '../auth/auth.service';
 export class HeaderComponent {
   constructor(private dataStorageService: DataStorageService,
               private authService: AuthService) { }
-  onSaveData() {
+    onSaveData() {
     this.dataStorageService.storeMovies()
       .subscribe(
-        (data) => {
-          console.log(data);
+        (response: Response) => {
+          console.log(response);
         }
       );
     this.dataStorageService.storeTV()
       .subscribe(
-        (data) => {
-          console.log(data);
+        (response: Response ) => {
+          console.log(response);
         }
       );
     this.dataStorageService.storeGames()
       .subscribe(
-        (data) => {
-          console.log(data);
+        (response: Response) => {
+          console.log(response);
         }
       );
     this.dataStorageService.storefavouritesmovies()
       .subscribe(
-        (data) => {
-          console.log(data);
+        (response: Response) => {
+          console.log(response);
         }
       );
+      this.dataStorageService.storefavouritestvs()
+        .subscribe(
+          (response: Response) => {
+            console.log(response);
+          }
+        );
+      this.dataStorageService.storefavouritesmovies()
+        .subscribe(
+          (response: Response) => {
+            console.log(response);
+          }
+        );
   }
- onFetchData() {
-    this.dataStorageService.getMovies();
-    this.dataStorageService.getTvs();
-    this.dataStorageService.getGames();
- }
+  onFetchData() {
+    this.dataStorageService.retrieveMovies();
+  }
   onLogout() {
     this.authService.logout();
   }

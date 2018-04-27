@@ -34,5 +34,11 @@ export class TvDetailComponent implements OnInit {
     this.tvService.deleteTV(this.id);
     this.router.navigate(['/tv']);
   }
+  onWishlist() {
+    this.router.navigate(['wish-list']);
+    console.log('fav TVS!');
+    this.tvService.addTVtoFavourites(this.tv);
+    console.log('TV show added!');
+  }
 
 }

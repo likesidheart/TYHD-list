@@ -19,6 +19,12 @@ export class GameDetailComponent implements OnInit {
   onEditGame() {
     this.router.navigate(['edit'], {relativeTo: this.route});
   }
+  onWishlist() {
+    this.router.navigate(['wish-list']);
+    console.log('fav games!');
+    this.gameService.addGametoFavourites(this.game);
+    console.log('Game added!');
+  }
   ngOnInit() {
     // const id = this.route.snapshot.params['id'];
     this.route.params
@@ -33,5 +39,6 @@ export class GameDetailComponent implements OnInit {
     this.gameService.deleteGame(this.id);
     this.router.navigate(['/games']);
   }
+
 
 }

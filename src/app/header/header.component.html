@@ -4,9 +4,9 @@
   </logo>
   <links>
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item  waves-light" routerLinkActive="active" mdbRippleRadius>
-        <a class="nav-link" routerLink="/home">Home</a>
-      </li>
+      <!--<li class="nav-item  waves-light" routerLinkActive="active" mdbRippleRadius>-->
+        <!--<a class="nav-link" routerLink="/home">Home</a>-->
+      <!--</li>-->
       <li class="nav-item waves-light" routerLinkActive="active"mdbRippleRadius>
         <a class="nav-link" routerLink="/movies">Movies</a>
       </li>
@@ -16,20 +16,35 @@
       <li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>
         <a class="nav-link" routerLink="games">Games</a>
       </li>
+      <li class="nav-item waves-light" *ngIf="authService.isAuthenticated()" routerLinkActive="active" mdbRippleRadius>
+        <a class="nav-link" routerLink="wish-list">Favourites</a>
+      </li>
     </ul>
     <ul class="navbar-nav nav-flex-icons">
-      <li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>
-        <a class="nav-link" routerLink="wish-list">Wish list</a>
+      <li class="nav-item">
+        <a class="nav-link" (click)="onSaveData()">Save Data</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Log In With</a>
+        <a class="nav-link" (click)="onFetchData()">Fetch Data</a>
       </li>
-      <li class="nav-item waves-light" mdbRippleRadius>
-        <a class="nav-link"><i class="fa fa-facebook"></i></a>
+    <ng-template [ngIf]="!authService.isAuthenticated()">
+      <li class="nav-item">
+        <strong><a routerLink="/signin" class="nav-link">Log In</a>  </strong>
       </li>
-      <li class="nav-item waves-light" mdbRippleRadius>
-        <a class="nav-link"><i class="fa fa-google"></i></a>
+      <li class="nav-item">
+        <strong><a routerLink="/signup" class="nav-link">Sign Up</a>  </strong>
       </li>
+    </ng-template>
+
+      <li class="nav-item" *ngIf="authService.isAuthenticated()">
+        <a style="cursor: pointer;" class="nav-link" (click)="onLogout()">Logout</a>
+      </li>
+      <!--<li class="nav-item waves-light" mdbRippleRadius>-->
+        <!--<a class="nav-link"><i class="fa fa-facebook"></i></a>-->
+      <!--</li>-->
+      <!--<li class="nav-item waves-light" mdbRippleRadius>-->
+        <!--<a class="nav-link"><i class="fa fa-google"></i></a>-->
+      <!--</li>-->
     </ul>
   </links>
 </mdb-navbar>

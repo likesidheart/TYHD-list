@@ -28,6 +28,16 @@ import { GameListComponent } from './games/game-list/game-list.component';
 import { GameItemComponent } from './games/game-list/game-item/game-item.component';
 import { GameEditComponent } from './games/game-edit/game-edit.component';
 import { GameDetailComponent } from './games/game-detail/game-detail.component';
+import {MovieService} from './movies/movie.service';
+import {DataStorageService} from '../shared/data-storage.service';
+import {TvService} from './tv/tv.service';
+import {GameService} from './games/game.service';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import {AuthService} from './auth/auth.service';
+import {AuthGurd} from './auth/auth-gurd.service';
+import {WishlistService} from './wishlist/wishlist.service';
+import { HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -55,16 +65,19 @@ import { GameDetailComponent } from './games/game-detail/game-detail.component';
     GameItemComponent,
     GameEditComponent,
     GameDetailComponent,
+    SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [MovieService, DataStorageService, TvService, GameService, AuthService, AuthGurd, WishlistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

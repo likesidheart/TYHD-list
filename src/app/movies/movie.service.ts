@@ -1,6 +1,7 @@
 import { Injectable} from '@angular/core';
 import {Movie} from './movie.model';
 import {Subject} from 'rxjs/Subject';
+import {WishlistService} from '../wishlist/wishlist.service';
 
 @Injectable()
 export class MovieService {
@@ -17,6 +18,7 @@ export class MovieService {
       'http://t0.gstatic.com/images?q=tbn:ANd9GcQCfmvrE4fMo2cd8esc7mDZPtFSJThAujddMPkRtti1_ij6u-jp',
       '2009', '7.8')
   ] ;
+  constructor(private wishlistService:  WishlistService) { }
   getMovies() {
    return this.movies.slice();
  }
@@ -35,7 +37,11 @@ export class MovieService {
         this.movies.splice(index, 1);
         this.moviesChanged.next(this.movies.slice());
  }
-
-  constructor() { }
-
+  setMovies(movies: Movie[]) {
+    this.movies = movies;
+    this.moviesChanged.next(this.movies.slice());
+  }
+  addMovietoFavourites(movies: Movie) {
+    this.wishlistService.addMovie(movies);
+  }
 }

@@ -1,0 +1,31 @@
+
+<!-- Card -->
+<div class="card mx-xl-5">
+
+  <!-- Card body -->
+  <div class="card-body">
+
+    <!-- Default form subscription -->
+    <form #f=ngForm (ngSubmit)="onSubmit(f)" novalidate>
+      <p class="h4 text-center py-4">Sign Up</p>
+      <!-- Default input name -->
+      <label for="email" class="grey-text font-weight-light">Your Email</label>
+      <input type="email" ngModel name="email" #email="ngModel" id="email" class="form-control">
+
+      <br>
+
+      <!-- Default input email -->
+      <label for="password" class="grey-text font-weight-light">Your Password</label>
+      <input type="password" ngModel name="password" #password="ngModel" id="password" class="form-control">
+
+      <div class="text-center py-4 mt-3">
+        <button class="btn btn-outline-purple" type="submit" [disabled]="!f.valid">Register Here!<i class="fa fa-paper-plane-o ml-2"></i></button>
+      </div>
+    </form>
+    <!-- Default form subscription -->
+  </div>
+  <!-- Card body -->
+
+</div>
+<!-- Card -->
+

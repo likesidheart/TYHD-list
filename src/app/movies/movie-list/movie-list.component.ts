@@ -1,8 +1,8 @@
-import {Component, OnInit } from '@angular/core';
+import {Component,  OnInit} from '@angular/core';
 import {Movie} from '../movie.model';
 import {MovieService} from '../movie.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {promise} from 'selenium-webdriver';
+import {Subscription} from 'rxjs/Subscription';
 // import {MovieEditComponent} from '../movie-edit/movie-edit.component';
 
 @Component({
@@ -12,6 +12,7 @@ import {promise} from 'selenium-webdriver';
 })
 export class MovieListComponent implements OnInit {
   movies: Movie[];
+  subscription: Subscription;
 
   constructor(private movieService: MovieService,
               private router: Router,
@@ -19,7 +20,7 @@ export class MovieListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.movieService.moviesChanged
+    this.subscription = this.movieService.moviesChanged
       .subscribe(
         (movies: Movie[]) => {
           this.movies = movies;
@@ -31,4 +32,7 @@ export class MovieListComponent implements OnInit {
   onNewMovie() {
     this.router.navigate(['new'], {relativeTo: this.route});
   }
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
+  // }
 }

@@ -1,6 +1,8 @@
 import { Injectable} from '@angular/core';
 import {Game} from './game.model';
 import {Subject} from 'rxjs/Subject';
+import {Movie} from '../movies/movie.model';
+import {WishlistService} from '../wishlist/wishlist.service';
 
 @Injectable()
 export class GameService {
@@ -36,6 +38,14 @@ export class GameService {
     this.gamesChanged.next(this.games.slice());
   }
 
-  constructor() { }
+  setGames(games: Game[]) {
+    this.games = games;
+    this.gamesChanged.next(this.games.slice());
+  }
+  addGametoFavourites(games: Game) {
+    this.wishlistService.addGame(games);
+  }
+
+  constructor(private wishlistService: WishlistService) { }
 
 }
